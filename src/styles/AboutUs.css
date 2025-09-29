@@ -1,0 +1,100 @@
+/* Background with gradient */
+.about-hero {
+  position: relative;
+  height: 100vh;
+  background: radial-gradient(circle at top, #0f0c29, #302b63, #24243e);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  color: white;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Overlay content */
+.hero-overlay {
+  position: relative;
+  z-index: 2;
+  animation: fadeInUp 1.5s ease-in-out;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  background: linear-gradient(90deg, #ff6a00, #ee0979);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: glowText 2.5s infinite alternate;
+}
+
+.hero-subtitle {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  color: #ddd;
+}
+
+.hero-btn {
+  padding: 12px 28px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  background: white;
+  color: #111;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.hero-btn:hover {
+  background: linear-gradient(90deg, #ff6a00, #ee0979);
+  color: white;
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 106, 0, 0.8);
+}
+
+/* Abstract wave element */
+.hero-abstract {
+  position: absolute;
+  bottom: -80px;
+  left: 50%;
+  width: 200%;
+  height: 250px;
+  background: linear-gradient(90deg, #ff6a00, #ee0979, #6a11cb, #2575fc);
+  border-radius: 50% 50% 0 0;
+  transform: translateX(-50%);
+  animation: waveMotion 6s ease-in-out infinite alternate;
+  filter: blur(30px) brightness(1.2);
+  z-index: 1;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes glowText {
+  from {
+    text-shadow: 0 0 10px #ff6a00, 0 0 20px #ee0979;
+  }
+  to {
+    text-shadow: 0 0 25px #6a11cb, 0 0 40px #2575fc;
+  }
+}
+
+@keyframes waveMotion {
+  0% {
+    transform: translateX(-50%) scaleY(1);
+  }
+  100% {
+    transform: translateX(-50%) scaleY(1.2);
+  }
+}
